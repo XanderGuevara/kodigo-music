@@ -1,16 +1,50 @@
-# React + Vite
+# Kodigo Music
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web de música desarrollada con React y Vite para practicar navegación SPA, estado compartido y persistencia en el navegador.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Explorar canciones iniciales en la página principal.
+- Buscar y filtrar canciones en la biblioteca.
+- Agregar nuevas canciones.
+- Marcar y quitar canciones favoritas.
+- Eliminar canciones de la biblioteca.
+- Reproducir la canción seleccionada desde el reproductor inferior.
+- Conservar los cambios en `localStorage`.
 
-## React Compiler
+## Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- React Router
+- Vite
+- JavaScript
+- CSS
 
-## Expanding the ESLint configuration
+## Ejecución local
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Para generar y revisar la versión de producción:
+
+```bash
+npm run lint
+npm run build
+npm run preview
+```
+
+## Rutas
+
+- `/` — Inicio y canciones disponibles.
+- `/biblioteca` — Biblioteca completa, búsqueda y filtros.
+- `/agregar` — Formulario para agregar una canción.
+
+## Persistencia
+
+Las canciones se guardan en el navegador con la clave `kodigo_music_canciones_v2`. Los datos no se sincronizan entre dispositivos.
+
+## Proyecto académico
+
+Desarrollado como proyecto práctico de desarrollo frontend en Kodigo.

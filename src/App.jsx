@@ -10,15 +10,19 @@ import AgregarCancion from './pages/AgregarCancion.jsx';
 
 export default function App() {
   const [canciones, setCanciones] = useState(() => {
-    const guardadas = localStorage.getItem('kodigo_music_canciones_v2');
-    return guardadas ? JSON.parse(guardadas) : CANCIONES_INICIALES;
+    try {
+      const guardadas = localStorage.getItem('kodigo_music_canciones_v2');
+      return guardadas ? JSON.parse(guardadas) : CANCIONES_INICIALES;
+    } catch {
+      return CANCIONES_INICIALES;
+    }
   });
 
   const [cancionActual, setCancionActual] = useState(null);
   const [estaReproduciendo, setEstaReproduciendo] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('kodigo_music_canciones', JSON.stringify(canciones));
+    localStorage.setItem('kodigo_music_canciones_v2', JSON.stringify(canciones));
   }, [canciones]);
 
   useEffect(() => {
@@ -102,6 +106,7 @@ export default function App() {
       <Footer />
 
       <PlayerBar
+        key={cancionActual?.id ?? 'sin-cancion'}
         cancionActual={cancionActual}
         estaReproduciendo={estaReproduciendo}
         onTogglePlay={() => setEstaReproduciendo((prev) => !prev)}

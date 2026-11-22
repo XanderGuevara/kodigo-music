@@ -7,7 +7,7 @@ export default function PlayerBar({
 }) {
   const audioRef = useRef(null);
   const [audioUrl, setAudioUrl] = useState(null);
-  const [cargando, setCargando] = useState(false);
+  const [cargando, setCargando] = useState(Boolean(cancionActual));
   const [sinPreview, setSinPreview] = useState(false);
   const [progreso, setProgreso] = useState(0);
 
@@ -15,11 +15,6 @@ export default function PlayerBar({
     if (!cancionActual) return;
 
     let cancelado = false;
-    setAudioUrl(null);
-    setSinPreview(false);
-    setProgreso(0);
-    setCargando(true);
-
     const buscarPreview = async () => {
       try {
         const consulta = encodeURIComponent(

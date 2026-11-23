@@ -45,6 +45,10 @@ npm run preview
 
 Las canciones se guardan en el navegador con la clave `kodigo_music_canciones_v2`. Los datos no se sincronizan entre dispositivos.
 
+## Aplicación publicada
+
+https://kodigo-music.alexguevara12715.workers.dev/
+
 ## Proyecto académico
 
 Desarrollado como proyecto práctico de desarrollo frontend en Kodigo.
